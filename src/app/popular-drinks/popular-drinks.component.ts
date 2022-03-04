@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 
 export class Drink{
   
@@ -19,15 +18,9 @@ export class Drink{
 })
 export class PopularDrinksComponent implements OnInit {
   
-  drinks: any;
-  constructor(private http : HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink')
-    .subscribe(Response => {
-      console.log(Response);
-      this.drinks = Response;
-    });
   }  
 }
 
