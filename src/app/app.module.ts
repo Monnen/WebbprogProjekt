@@ -14,9 +14,9 @@ import { PopularDrinksComponent } from './popular-drinks/popular-drinks.componen
   declarations: [
     AppComponent,
     DrinkInfoComponent,
-    DrinkListComponent
+    DrinkListComponent,
     NavbarComponent,
-    PopularDrinksComponent
+    PopularDrinksComponent,
     AlertComponent,
   ],
   imports: [

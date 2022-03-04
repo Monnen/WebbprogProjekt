@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchDrinkByLetterService } from 'app/fetch-drink-by-letter.service';
-import { ObjectUnsubscribedError, subscribeOn } from 'rxjs';
+//import { ObjectUnsubscribedError, subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-drink-list',
@@ -8,7 +8,7 @@ import { ObjectUnsubscribedError, subscribeOn } from 'rxjs';
   styleUrls: ['./drink-list.component.css']
 })
 export class DrinkListComponent implements OnInit {
-  info: string[];
+  info: string[]; 
   subscription: any;
   constructor(private fetch: FetchDrinkByLetterService) {
     this.info = [];
