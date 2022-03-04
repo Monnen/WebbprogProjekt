@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'projektDrinkSidan';
+
+
+searchText: string = '';
+
+onSearchTextEntered(searchValue: string){
+  this.searchText = searchValue;
+  console.log(this.searchText);
+}
 }

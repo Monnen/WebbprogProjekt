@@ -1,5 +1,13 @@
 
 <app-alert></app-alert>
+<app-searching (searchTextChanged)="onSearchTextEntered($event)"></app-searching>
 <!--<app-drink-info></app-drink-info>-->
 <app-drink-list></app-drink-list>
 <router-outlet></router-outlet>
+
+<!-- Måste ha drink-komponent och importera den i app.module för att detta ska funka. + ha en name property -->
+<!-- <div class="" *ngIf="drinkar.name.toLowerCase.includes(searchText)">  -->
+<div class="" *ngIf="searchText === 'GT'">
+    <h1>Vill du ha GT?</h1>
+    <!-- skicka till sidan för exv GT-->
+</div>

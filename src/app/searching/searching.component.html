@@ -1,0 +1,28 @@
+<!-- MDBBootstrapModule.forRoot()  -->
+
+<h1>Sök drink</h1>
+
+<!-- <code>string[]</code>
+<ul>
+  <li><code>debounceTime</code> operator</li>
+  <li>kicks in only if 2+ characters typed</li>
+  <li>limits to 10 results</li>
+</ul> --> 
+
+<label for="typeahead-basic">Sök här:</label>
+<input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()" [ngbTypeahead]="search" placeholder="Sök efter en drink!"/>
+<hr>
+
+
+
+<pre>Model: {{ model | json }}</pre>
+
+<div>
+  <!-- <input type="text" class="search-box" placeholder="Sök efter en drink!" (keyup)="sendData($event)" [ngbTypeahead]="search">
+  <section class = "search-results"> </section>
+  <button (click)="search()">Sök</button> -->
+
+
+
+
+</div>
