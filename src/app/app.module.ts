@@ -9,6 +9,7 @@ import { DrinkInfoComponent } from './drink-info/drink-info.component';
 import { DrinkListComponent } from './drink-list/drink-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PopularDrinksComponent } from './popular-drinks/popular-drinks.component';
+import { RandomComponent } from './random/random.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PopularDrinksComponent } from './popular-drinks/popular-drinks.componen
     NavbarComponent,
     PopularDrinksComponent,
     AlertComponent,
+    RandomComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,6 @@ export class FetchRandomDrinkService {
   log(msg: any)   { console.log(msg); }
   fetchRandom():  Observable<string>{
     
-    return this.http.get('www.thecocktaildb.com/api/json/v1/1/random.php', {responseType: 'text'});
+    return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/random.php', {responseType: 'text'});
   }
 }

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchDrinkByLetterService } from 'app/fetch-drink-by-letter.service';
-import { FetchRandomDrinkService } from 'app/fetch-random-drink.service';
 import { FetchDrinkInfoService } from 'app/fetch-drink-info.service';
-import { ConsoleLogger } from '@angular/compiler-cli/private/localize';
 
 @Component({
   selector: 'app-popular-drinks',
