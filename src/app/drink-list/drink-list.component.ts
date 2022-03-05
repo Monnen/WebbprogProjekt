@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchDrinkByLetterService } from 'app/fetch-drink-by-letter.service';
-import { ObjectUnsubscribedError, subscribeOn } from 'rxjs';
+import { ObjectUnsubscribedError, subscribeOn, first } from 'rxjs';
 
 @Component({
   selector: 'app-drink-list',
@@ -10,25 +10,59 @@ import { ObjectUnsubscribedError, subscribeOn } from 'rxjs';
 export class DrinkListComponent implements OnInit {
   info: string[];
   subscription: any;
+  letter: any;
+  changeDetected: Boolean;
   constructor(private fetch: FetchDrinkByLetterService) {
     this.info = [];
-
+    this.letter = 'a';
+    this.changeDetected = true;
    }
 
   ngOnInit(): void {
-    
-    this.subscription = this.fetch.fetchByLetter('a').subscribe(data => {
-      this.info = Object(JSON.parse(data))["drinks"];
-      console.log(this.info);
-    })
+    if(this.changeDetected){
+      this.subscription = this.fetch.fetchByLetter(this.letter).pipe(first()).subscribe(data => {
+        this.info = Object(JSON.parse(data))["drinks"];
+      })
+      this.changeDetected = false;
+    }
     
   }
-  updateLetter(l:any){
-    this.subscription.unsubscribe();
-    this.subscription = this.fetch.fetchByLetter(l).subscribe(data => {
-      this.info = Object(JSON.parse(data))["drinks"];
-      console.log(this.info);
+
+  ngDoCheck(){
+    if(this.changeDetected){
+      this.subscription.unsubscribe();
+      if(this.letter == 'af'){
+        this.subscription.unsubscribe();
+      this.subscription = this.fetch.fetchAlcoholFree().pipe(first()).subscribe(data => {
+      this.info = Object(JSON.parse(data))["drinks"] || [];
     })
+      }else{
+        this.subscription = this.fetch.fetchByLetter(this.letter).pipe(first()).subscribe(data => {
+          this.info = Object(JSON.parse(data))["drinks"] || [];
+        })
+      }
+      
+      this.changeDetected = false;
+    }
+    
+
+  }
+  updateLetter(l:any){
+    if(l!== this.letter){
+      this.letter = l;
+      this.changeDetected = true;
+    }
+ 
+    
+  }
+
+  updateAlcFree(){
+    
+    if(this.letter !== 'af'){
+      this.letter = 'af';
+      this.changeDetected = true;
+    }
+    
   }
 
   getIndices(): number[]{
@@ -52,6 +86,9 @@ export class DrinkListComponent implements OnInit {
   }
   getAlpha(): string[]{
     return "abcdefghijklmnopqrstuvwxyz".split("");
+  }
+  getURLwithID(idx:any){
+    return "/drinkinfo/"  + Object(this.info[idx])["idDrink"];
   }
 
 }

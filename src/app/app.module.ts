@@ -7,13 +7,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertComponent } from './alert/alert.component';
 import { DrinkInfoComponent } from './drink-info/drink-info.component';
 import { DrinkListComponent } from './drink-list/drink-list.component';
+import { IngredientInfoComponent } from './ingredient-info/ingredient-info.component';
+import { NgbdCollapseBasic } from './collapse/collapse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlertComponent,
     DrinkInfoComponent,
-    DrinkListComponent
+    DrinkListComponent,
+    IngredientInfoComponent,
+    NgbdCollapseBasic
   ],
   imports: [
     BrowserModule,
