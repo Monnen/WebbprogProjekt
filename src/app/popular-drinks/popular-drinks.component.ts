@@ -53,4 +53,8 @@ export class PopularDrinksComponent implements OnInit {
     t.push(Object(this.info[idx][0])["strTags"])
     return t;
   }
+
+  getURLwithID(idx:any){
+    return "/drinkinfo/"  + Object(this.info[idx][0])["idDrink"];
+  }
 }

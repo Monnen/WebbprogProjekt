@@ -8,11 +8,11 @@ import { RandomComponent } from './random/random.component';
 
 const routes: Routes = [
   {path: 'drink-list', component: DrinkListComponent},
-  {path: '**', component: PopularDrinksComponent},
   {path: 'popular-drinks', component: PopularDrinksComponent},
   {path: 'random', component: RandomComponent},
-  {path:"drinkinfo/:id", component: DrinkInfoComponent},
-  {path:"ingredientinfo/:name", component: IngredientInfoComponent},
+  {path: 'drinkinfo/:id', component: DrinkInfoComponent},
+  {path: 'ingredientinfo/:name', component: IngredientInfoComponent},
+  {path: '**', component: PopularDrinksComponent},
 ];
 
 @NgModule({

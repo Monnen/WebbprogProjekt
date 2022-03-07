@@ -43,8 +43,8 @@ export class RandomComponent implements OnInit {
     t.push(Object(this.info[idx])["strTags"])
     return t;
   }
-  getAlpha(): string[]{
-    return "abcdefghijklmnopqrstuvwxyz".split("");
-  }
 
+  getURLwithID(idx:any){
+    return "/drinkinfo/"  + Object(this.info[idx])["idDrink"];
+  }
 }
