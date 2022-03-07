@@ -9,7 +9,6 @@ import { SearchingComponent } from './searching/searching.component';
 import { DrinkInfoComponent } from './drink-info/drink-info.component';
 import { DrinkListComponent } from './drink-list/drink-list.component';
 
-import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 
@@ -33,7 +32,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     
     NgbModule,
-    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
