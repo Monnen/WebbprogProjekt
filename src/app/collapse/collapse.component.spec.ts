@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CollapseComponent } from './collapse.component';
 
 describe('CollapseComponent', () => {

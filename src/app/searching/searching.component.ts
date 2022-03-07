@@ -2,13 +2,7 @@ import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {Observable, OperatorFunction} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 import{ActivatedRoute, Router} from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-
-import { DrinkListComponent } from 'app/drink-list/drink-list.component';
 import { FetchDrinkByNameService } from 'app/fetch-drink-by-name.service';
-
-const drinkar = ['Margarita', 'GT'];
-//bara för att testa. måste få in alla drinkar
 
 @Component({
   selector: 'app-searching',
@@ -22,30 +16,23 @@ export class SearchingComponent implements OnInit {
 
   public model: any;
 
-  searchTerm: String = "";
+  searchTerm: any = "";
   
   constructor(private fetch: FetchDrinkByNameService, private route:ActivatedRoute, private router:Router) { 
     this.drinkar=[];
-  }
+    
+    this.route.paramMap.subscribe(params => {
+      
+      this.searchTerm = this.route.snapshot.paramMap.get('sökTerm');
+      this.subscription = this.fetch.fetchByName(this.searchTerm).subscribe(data => {
+        this.drinkar = Object(JSON.parse(data)["drinks"]);
+      })
 
-  sendData(event: any) {
-    //event.target.value är det man skrivit in i rutan
-    //Skicka till info-sidan när man tryckt på enter
-    if(event.key === 'Enter') {
-    this.subscription = this.fetch.fetchByName(event.target.value).subscribe(data => {
-      this.drinkar = Object(JSON.parse(data))["drinks"];
-      console.log(this.drinkar);
     })
-    }
-  }
 
-  updateName(l:any){
-    this.subscription.unsubscribe();
-    this.subscription = this.fetch.fetchByName(l).subscribe(data => {
-      this.drinkar = Object(JSON.parse(data))["drinks"];
-      console.log(this.drinkar);
-    })
+
   }
+  
   getAlpha(): string[]{
     return "abcdefghijklmnopqrstuvwxyz".split("");
   }
@@ -61,8 +48,14 @@ export class SearchingComponent implements OnInit {
     return t;
   }
 
-  getIndices(): number[]{
-    return [...Array(this.drinkar.length).keys()];
+  getIndices(): any{
+
+    let result = [...Array(this.drinkar.length).keys()];
+    if (this.drinkar.length){
+      return result;
+    }
+    
+    return null;
   };
 
   getImg(idx: any): string[]{
@@ -76,12 +69,11 @@ export class SearchingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  
-
-    this.route.params.subscribe(params => {
-      if (['params.searchTerm'])
-        [this.searchTerm] = ['params.searchTerm'];
+    this.searchTerm = this.route.snapshot.paramMap.get('sökTerm');
+    this.fetch.fetchByName(this.searchTerm).subscribe(data => {
+      this.drinkar = Object(JSON.parse(data)["drinks"]);
     })
+    
   }
 
   //Visa förslag när man söker
@@ -90,7 +82,7 @@ export class SearchingComponent implements OnInit {
        debounceTime(200),
        distinctUntilChanged(),
        map(term => term.length < 2 ? []
-         : drinkar.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+         : this.drinkar.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
      )
 
     enteredSearchValue: string = '';

@@ -16,9 +16,9 @@
             <a class="nav-link" routerLink="/random">Lämna det åt slumpen</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Sök..." aria-label="Sök">
-          <button class="btn btn-outline-light" type="submit">Sök</button>
+        <form (ngSubmit)="onSubmit($event)" class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Sök..." aria-label="Sök" name="sökTerm">
+          <button class="btn btn-outline-light" type="submit" >Sök</button>
         </form>
       </div>
     </div>

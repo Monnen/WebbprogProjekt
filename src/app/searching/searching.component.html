@@ -1,10 +1,4 @@
-<!-- MDBBootstrapModule.forRoot()  -->
-
-<h1>Sök drink</h1>
-
-<label for="typeahead-basic">Sök här:</label>
-<input id="typeahead-basic" type="text" class="form-control" (keyup)="sendData($event)" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()" [ngbTypeahead]="search" placeholder="Sök efter en drink!"/>
-
+<h5 style="margin-left: 2%;" *ngIf="!getIndices()">No search results!</h5>
 <div class="row" style="margin-left: 2%; margin-right: 2%;">
   <div class="col-3"*ngFor="let idx of getIndices()">
 <div class="card text-white bg-dark" style="margin-left: 1%; margin-right: 1%; margin-top: 3%; margin-bottom: 3%; cursor:pointer" routerLink =  {{getURLwithID(idx)}}>
