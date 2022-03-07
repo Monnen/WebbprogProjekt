@@ -2,13 +2,3 @@
 <app-navbar></app-navbar>
 <app-searching (searchTextChanged)="onSearchTextEntered($event)"></app-searching>
 <router-outlet></router-outlet>
-
-<!-- Måste ha drink-komponent och importera den i app.module för att detta ska funka. + ha en name property -->
-<!-- <div class="" *ngIf="drink-info.getName().toLowerCase.includes(searchText)">  -->
-<div class="" *ngIf="searchText === 'GT'">
-    
-    <!--Skickas vidare i .ts istället-->
-    <!-- <ul>
-    <li><a routerLink="/drink-info/:searchText" routerLinkActive="active">Info om drinken</a></li>
-    </ul> -->
-</div>

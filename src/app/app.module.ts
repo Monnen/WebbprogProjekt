@@ -31,7 +31,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     AlertComponent,
     DrinkInfoComponent,
-    DrinkListComponent
+    DrinkListComponent,
     RandomComponent,
     IngredientInfoComponent,
     NgbdCollapseBasic
@@ -42,7 +42,6 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     HttpClientModule,
     FormsModule,
-    
     NgbModule,
 
   ],

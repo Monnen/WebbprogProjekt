@@ -9,11 +9,12 @@ import { SearchingComponent } from './searching/searching.component';
 
 const routes: Routes = [
   {path: 'drink-list', component: DrinkListComponent},
-  {path: '**', component: PopularDrinksComponent},
+  {path: 'searching', component: SearchingComponent},
   {path: 'popular-drinks', component: PopularDrinksComponent},
   {path: 'random', component: RandomComponent},
   {path:"drinkinfo/:id", component: DrinkInfoComponent},
   {path:"ingredientinfo/:name", component: IngredientInfoComponent},
+  {path: '**', component: PopularDrinksComponent},
 ];
 
 @NgModule({
