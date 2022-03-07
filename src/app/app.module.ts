@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AlertComponent } from './alert/alert.component';
 import { SearchingComponent } from './searching/searching.component';
 import { DrinkInfoComponent } from './drink-info/drink-info.component';
 import { DrinkListComponent } from './drink-list/drink-list.component';
@@ -23,12 +22,6 @@ import { FormsModule } from '@angular/forms';
     DrinkListComponent,
     NavbarComponent,
     PopularDrinksComponent,
-    AlertComponent,
-    SearchingComponent,
-    HomeComponent,
-    AlertComponent,
-    DrinkInfoComponent,
-    DrinkListComponent,
     RandomComponent,
     IngredientInfoComponent,
     NgbdCollapseBasic

@@ -71,6 +71,10 @@ export class SearchingComponent implements OnInit {
     return t;
   }
 
+  getURLwithID(idx:any){
+    return "/drinkinfo/"  + Object(this.drinkar[idx])["idDrink"];
+  }
+
   ngOnInit(): void {
   
 
