@@ -15,9 +15,6 @@ import { IngredientInfoComponent } from './ingredient-info/ingredient-info.compo
 import { NgbdCollapseBasic } from './collapse/collapse.component';
 
 import { FormsModule } from '@angular/forms';
-
-// import { DropdownModule, MDBSpinningPreloader } from 'ng-uikit-pro-standard';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +24,11 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     PopularDrinksComponent,
     AlertComponent,
+    SearchingComponent,
+    HomeComponent,
+    AlertComponent,
+    DrinkInfoComponent,
+    DrinkListComponent,
     RandomComponent,
     IngredientInfoComponent,
     NgbdCollapseBasic

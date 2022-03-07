@@ -5,9 +5,11 @@ import { IngredientInfoComponent } from './ingredient-info/ingredient-info.compo
 import { DrinkListComponent } from './drink-list/drink-list.component';
 import { PopularDrinksComponent } from './popular-drinks/popular-drinks.component';
 import { RandomComponent } from './random/random.component';
+import { SearchingComponent } from './searching/searching.component';
 
 const routes: Routes = [
   {path: 'drink-list', component: DrinkListComponent},
+  {path: 'searching', component: SearchingComponent},
   {path: 'popular-drinks', component: PopularDrinksComponent},
   {path: 'random', component: RandomComponent},
   {path: 'drinkinfo/:id', component: DrinkInfoComponent},
