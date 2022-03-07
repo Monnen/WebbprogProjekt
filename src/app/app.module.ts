@@ -8,6 +8,11 @@ import { AlertComponent } from './alert/alert.component';
 import { SearchingComponent } from './searching/searching.component';
 import { DrinkInfoComponent } from './drink-info/drink-info.component';
 import { DrinkListComponent } from './drink-list/drink-list.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PopularDrinksComponent } from './popular-drinks/popular-drinks.component';
+import { RandomComponent } from './random/random.component';
+import { IngredientInfoComponent } from './ingredient-info/ingredient-info.component';
+import { NgbdCollapseBasic } from './collapse/collapse.component';
 
 import { FormsModule } from '@angular/forms';
 
@@ -16,12 +21,15 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    AlertComponent,
     SearchingComponent,
-    HomeComponent,
-    AlertComponent,
     DrinkInfoComponent,
-    DrinkListComponent
+    DrinkListComponent,
+    NavbarComponent,
+    PopularDrinksComponent,
+    AlertComponent,
+    RandomComponent,
+    IngredientInfoComponent,
+    NgbdCollapseBasic
   ],
   imports: [
     BrowserModule,

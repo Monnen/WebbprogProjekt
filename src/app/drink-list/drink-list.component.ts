@@ -8,7 +8,7 @@ import { ObjectUnsubscribedError, subscribeOn, first } from 'rxjs';
   styleUrls: ['./drink-list.component.css']
 })
 export class DrinkListComponent implements OnInit {
-  info: string[];
+  info: string[]; 
   subscription: any;
   letter: any;
   changeDetected: Boolean;
