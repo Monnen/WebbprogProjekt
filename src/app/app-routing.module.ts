@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'drink-list', component: DrinkListComponent},
   {path: '**', component: PopularDrinksComponent},
   {path: 'popular-drinks', component: PopularDrinksComponent},
-  {path: 'random', component: RandomComponent}
+  {path: 'random', component: RandomComponent},
   {path:"drinkinfo/:id", component: DrinkInfoComponent},
   {path:"ingredientinfo/:name", component: IngredientInfoComponent},
 ];
