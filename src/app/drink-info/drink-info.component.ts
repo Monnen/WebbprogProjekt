@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchDrinkInfoService } from 'app/fetch-drink-info.service';
 import { NgbPanel } from '@ng-bootstrap/ng-bootstrap';
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
+import {NgbdCollapseBasic} from 'app/collapse/collapse.component';
 
 @Component({
   selector: 'app-drink-info',
@@ -9,16 +11,19 @@ import { NgbPanel } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DrinkInfoComponent implements OnInit {
   info;
-  constructor(private fetchDInfo: FetchDrinkInfoService) {
+  id : any;
+  constructor(private fetchDInfo: FetchDrinkInfoService, private route:ActivatedRoute) {
     this.info = {};
+    this.id = "";
    }
    
 
   ngOnInit(): void {
-    this.fetchDInfo.fetchById("11872").subscribe(data => {
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.fetchDInfo.fetchById(this.id).subscribe(data => {
       this.info = Object(JSON.parse(data)["drinks"][0]);
-      console.log(this.info);
     })
+    
   }
 
  
@@ -45,6 +50,9 @@ export class DrinkInfoComponent implements OnInit {
       idx++;
     }
     return t;
+  }
+  getIngredientUrl(name:any){
+    return "/ingredientinfo/" + name.split(" -")[0] ;
   }
   
 

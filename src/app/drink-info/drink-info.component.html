@@ -11,8 +11,8 @@
         <h4 class="card-title">Ingredients</h4>
         <span>
             <ul>
-                <li *ngFor="let recipient of getIngredients()">
-                  {{recipient}}
+                <li *ngFor="let ingredient of getIngredients()" style="cursor:pointer; text-decoration: underline;" routerLink={{getIngredientUrl(ingredient)}}>
+                  {{ingredient}}
                  </li>
               </ul>
     </span>
@@ -21,6 +21,7 @@
         </div>
         </div>
         <h6 class="card-footer text-muted">#{{getFooterInfo()}}</h6>
+      
     </div>
   </div>
 

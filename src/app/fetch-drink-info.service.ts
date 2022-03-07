@@ -12,7 +12,7 @@ export class FetchDrinkInfoService {
     private http: HttpClient
   ) { }
 
-  log(msg: any)   { console.log(msg); }
+
   fetchById(id: any):  Observable<string>{
     
     return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id, {responseType: 'text'});
