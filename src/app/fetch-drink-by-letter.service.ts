@@ -16,4 +16,8 @@ export class FetchDrinkByLetterService {
     
     return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=' + letter, {responseType: 'text'});
   }
+  fetchAlcoholFree():  Observable<string>{
+    
+    return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic' , {responseType: 'text'});
+  }
 }
