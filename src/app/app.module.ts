@@ -3,27 +3,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertComponent } from './alert/alert.component';
+import { SearchingComponent } from './searching/searching.component';
 import { DrinkInfoComponent } from './drink-info/drink-info.component';
 import { DrinkListComponent } from './drink-list/drink-list.component';
-import { IngredientInfoComponent } from './ingredient-info/ingredient-info.component';
-import { NgbdCollapseBasic } from './collapse/collapse.component';
+
+import { FormsModule } from '@angular/forms';
+
+// import { DropdownModule, MDBSpinningPreloader } from 'ng-uikit-pro-standard';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlertComponent,
+    SearchingComponent,
+    HomeComponent,
+    AlertComponent,
     DrinkInfoComponent,
-    DrinkListComponent,
-    IngredientInfoComponent,
-    NgbdCollapseBasic
+    DrinkListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
